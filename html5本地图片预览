@@ -1,0 +1,17 @@
+// 文本域
+<input  class="weui_uploader_input add-pic" name="" type="file" accept="image/jpg,image/jpeg,image/png,image/gif">
+
+$('#pics-input').on('change', '.add-pic', function () {
+    var that = $(this);
+    
+    // 单选取得第一个图片
+    if (this.files && this.files[0]) {
+        var reader = new FileReader();
+        reader.readAsDataURL(this.files[0]);
+        reader.onload = function (e) {
+        
+            // 图片地址
+            e.target.result
+        };
+    }
+});
