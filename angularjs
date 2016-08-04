@@ -23,3 +23,16 @@ ng-bind-html可以显示html代码，不过要引用其它的库来辅助完成a
 angular.module('myApp', ['ngSanitize']);
 
 ng-app="myApp"自己定义的模块名称
+
+// 监听模型值的变化
+$scope.$watch($scope.sum, function(newValue, oldValue) {
+    console.log(newValue, oldValue);
+});
+
+// $apply 更新模型的值
+setTimeout(function() {
+
+    $scope.$apply(function() {
+        $scope.sum = 'new';
+    });
+}, 2000);
