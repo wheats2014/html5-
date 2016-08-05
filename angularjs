@@ -36,3 +36,19 @@ setTimeout(function() {
         $scope.sum = 'new';
     });
 }, 2000);
+
+
+$provide
+var app = angular.module('app', [], function($provide) {
+    $provide.provider('providerServices01', function() {
+        this.$get = function() {
+            return {
+                message: 'providerServices01'
+            }
+        }
+    });
+});
+
+app.controller('appController', ['$scope', 'providerServices01', function($scope, providerServices01) {
+    console.log(providerServices01);
+}]);
