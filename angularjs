@@ -66,3 +66,15 @@ var app = angular.module('app', []).config(function($provide) {
 app.controller('appController', ['$scope', 'providerServices01', function($scope, providerServices01) {
     console.log(providerServices01);
 }])
+
+config
+var app = angular.module('app', []).config(function($provide) {
+    $provide.service('providerServices01', function() {
+        return {
+             message: 'providerServices01'
+        }
+    });
+});
+app.controller('appController', ['$scope', 'providerServices01', function($scope, providerServices01) {
+    console.log(providerServices01);
+}])
